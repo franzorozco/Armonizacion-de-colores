@@ -1,0 +1,25 @@
+.harmonies {
+  margin-top: 30px;
+}
+
+.controls {
+  margin-bottom: 30px;
+
+  input {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+.formula {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
