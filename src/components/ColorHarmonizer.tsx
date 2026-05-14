@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ColorCard from "./ColorCard";
 import ContrastChecker from "./ContrastChecker";
+import ColorSphere3D from "./ColorSphere3D";
 import "../styles/ColorHarmonizer.scss";
 
 interface Harmony {
@@ -41,7 +42,6 @@ function ColorHarmonizer() {
   };
 
   const harmonies = getHarmonies(hue);
-
   return (
     <section className="harmonies">
       <div className="controls">
@@ -60,22 +60,9 @@ function ColorHarmonizer() {
         />
       </div>
 
-      <div className="formula">
-        <h2>Fórmulas HSL</h2>
-
-        <p>
-          Complementario = H + 180°
-        </p>
-
-        <p>
-          Triada = H + 120° y H + 240°
-        </p>
-
-        <p>
-          Análogos = H ± 30°
-        </p>
-      </div>
-
+      <ColorSphere3D
+        colors={harmonies.map((h) => h.value)}
+      />
       <div className="palette">
         {harmonies.map((item) => (
           <ColorCard
